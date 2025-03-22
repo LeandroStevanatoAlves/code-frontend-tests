@@ -26,12 +26,6 @@ jobs:
       - name: Instalar Dependências do Maven
         run: mvn clean install -DskipTests
 
-      - name: Configurar e Iniciar o Selenium Grid
-        run: |
-          docker network create selenium
-          docker run -d -p 4444:4444 --network selenium --name selenium-hub selenium/hub:4.10.0
-          docker run -d --network selenium --name chrome-node -e HUB_HOST=selenium-hub selenium/node-chrome:4.10.0
-
       - name: Executar Testes Automatizados
         run: mvn test
 

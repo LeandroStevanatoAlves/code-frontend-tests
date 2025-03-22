@@ -25,6 +25,6 @@ public class HomePage {
 
     public boolean sugestoesExibidas() {
         List<WebElement> suggestions = driver.findElements(suggestionsList);
-        return suggestions.length > 0;
+        return !suggestions.isEmpty();
     }
 }

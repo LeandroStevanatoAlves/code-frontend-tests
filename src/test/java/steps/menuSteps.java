@@ -25,7 +25,7 @@ public class menuSteps {
     @Então("o menu é exibido corretamente")
     public void o_menu_é_exibido_corretamente() {
         menuPage.abrirMenu();
-        Assert.assertTrue(menuPage.isCategoriesListDisplayed(), "O menu não foi exibido corretamente.");
+        Assert.assertTrue(menuPage.listaCategoriasExibido(), "O menu não foi exibido corretamente.");
         driver.quit();
     }
 }

@@ -12,5 +12,5 @@ Funcionalidade: Menu de Navegação
 
   Cenário: O menu é responsivo em tablets
     Dado que estou na página inicial da Amazon
-    Quando altero o tamanho da janela para "tablets"
+    Quando altero o tamanho da janela para "tablet"
     Então o menu é exibido corretamente

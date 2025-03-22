@@ -5,6 +5,7 @@ import io.cucumber.java.pt.Quando;
 import io.cucumber.java.pt.Então;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import pages.HomePage;
 
@@ -14,6 +15,12 @@ public class pesquisaSteps {
 
     @Dado("que estou na página inicial da Amazon")
     public void que_estou_na_página_inicial_da_amazon() {
+        ChromeOptions options = new ChromeOptions();
+        // Verifica se está rodando no Github Actions
+        if (System.getenv("CI") != null) {
+            options.addArguments("--headless");
+        }
+
         driver = new ChromeDriver();
         homePage = new HomePage(driver);
         homePage.abrirHomePage();

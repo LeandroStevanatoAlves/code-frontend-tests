@@ -16,9 +16,11 @@ public class menuSteps {
     @Quando("altero o tamanho da janela para {string}")
     public void altero_o_tamanho_da_janela_para(String tamanhoJanela) {
         if (tamanhoJanela.equals("mobile")) {
-            driver.manage().window().setSize(new Dimension(375, 812)); // Simula um iPhone X
+            // Simula um iPhone X
+            driver.manage().window().setSize(new Dimension(375, 812));
         } else if (tamanhoJanela.equals("tablet")) {
-            driver.manage().window().setSize(new Dimension(768, 1024)); // Simula um iPad
+            // Simula um iPad
+            driver.manage().window().setSize(new Dimension(768, 1024));
         }
     }
 

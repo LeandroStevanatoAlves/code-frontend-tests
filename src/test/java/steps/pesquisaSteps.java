@@ -19,6 +19,8 @@ public class pesquisaSteps {
         // Verifica se está rodando no Github Actions
         if (System.getenv("CI") != null) {
             options.addArguments("--headless");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--no-sandbox");
         }
 
         driver = new ChromeDriver();
